@@ -3,16 +3,6 @@ variable "region" {
   default = "eu-central-1"
 }
 
-variable "aZone1" {
-  description = "Availabbiliti zone 1"
-  default = "eu-central-1a"
-}
-
-variable "aZone2" {
-  description = "Availabbiliti zone 2"
-  default = "eu-central-1b"
-}
-
 variable "cidr_block_vpc" {
   description = "CIDR block for VPC"
   default     = "10.0.0.0/16"
