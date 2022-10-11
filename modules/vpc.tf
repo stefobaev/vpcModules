@@ -18,14 +18,14 @@ resource "aws_subnet" "publicSubnets" {
   for_each = var.publicSubnets
     vpc_id            = aws_vpc.mainVpc.id
     cidr_block        = each.value.cidr_block
-    availability_zone = each.value.availability_zone
+    availability_zone = each.value.aZone1
     tags              = each.value["tags"]
 }
 resource "aws_subnet" "privateSubnets" {
   for_each = var.privateSubnets
     vpc_id            = aws_vpc.mainVpc.id
     cidr_block        = each.value.cidr_block
-    availability_zone = each.value.availability_zone
+    availability_zone = each.value.aZone2
     tags              = each.value["tags"]
 }
 resource "aws_eip" "nat_eip" {
