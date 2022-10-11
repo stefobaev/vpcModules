@@ -54,7 +54,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.mainVpc.id
 
   dynamic "route" {
-    for_each = var.privateRouteTable
+    for_each = var.publicRouteTable
   content {
     cidr_block = var.default_cidr_block
     gateway_id = aws_internet_gateway.igw.id
