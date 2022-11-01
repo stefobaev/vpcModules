@@ -1,3 +1,3 @@
-output "iamRole" {
-    value = aws_iam_role.iamRole.id
+output "iamRoleTreti" {
+    value = aws_iam_role.iamRoleTreti.id
 }

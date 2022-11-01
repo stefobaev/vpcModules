@@ -2,6 +2,6 @@ variable "privateSubnet" {}
 
 variable "listener" {}
 
-variable "iamRole" {}
+variable "iamRoleTreti" {}
 
 variable "vpcId" {}

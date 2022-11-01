@@ -10,8 +10,8 @@ resource "aws_alb" "LB" {
   }
 }
 
-resource "aws_alb_target_group" "targetGroup" {
-  name     = "targetGroup"
+resource "aws_alb_target_group" "targetGroupTreti" {
+  name     = "targetGroupTreti"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpcId
@@ -33,7 +33,7 @@ resource "aws_alb_listener" "listener" {
   protocol = "HTTP"
 
   default_action {
-    target_group_arn = aws_alb_target_group.targetGroup.id
+    target_group_arn = aws_alb_target_group.targetGroupTreti.id
     type             = "forward"
   }
 }

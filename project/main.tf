@@ -20,6 +20,14 @@ module "clu" {
   source = "../modules/clu"
   vpcId = module.vpc.vpcId
   privateSubnet = module.vpc.privateSubnet
-  iamRole = module.clu.iamRole
+  iamRoleTreti = module.clu.iamRoleTreti
   listener = module.alb.listener
+}
+
+module "codeBuild" {
+  source = "../modules/codebuild"
+  vpcId = module.vpc.vpcId
+  iamRoleTreti = module.clu.iamRoleTreti
+  privateSubnet = module.vpc.privateSubnet
+  region = module.vpc.region
 }

@@ -13,3 +13,7 @@ output "publicSubnet" {
 output "privateSubnet" {
     value = [aws_subnet.privateSubnets["Private1"].id, aws_subnet.privateSubnets["Private2"].id]
 }
+
+output "region" {
+    value = "eu-central-1"
+}

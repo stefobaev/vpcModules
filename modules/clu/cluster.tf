@@ -16,7 +16,7 @@ resource "aws_ecs_cluster" "awsCluster" {
 
 resource "aws_ecs_task_definition" "awsEcsTaskDefinition" {
     family = "service"
-    execution_role_arn = aws_iam_role.iamRole.arn
+    execution_role_arn = aws_iam_role.iamRoleTreti.arn
     requires_compatibilities = ["FARGATE"]
     network_mode = "awsvpc"
     cpu = "256"
@@ -49,15 +49,15 @@ resource "aws_ecs_service" "awsEcsService" {
         assign_public_ip = true
     }
     depends_on = [
-      var.listener, var.iamRole
+      var.listener, var.iamRoleTreti
     ]
 }
 
-resource "aws_iam_role" "iamRole" {
-    name = "iamRole"
+resource "aws_iam_role" "iamRoleTreti" {
+    name = "iamRoleTreti"
 
     tags = {
-      "Name" = "iamRole"
+      "Name" = "iamRoleTreti"
     }
     assume_role_policy = jsonencode({
         Version = "2012-10-17"

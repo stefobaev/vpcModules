@@ -86,7 +86,7 @@ resource "aws_route_table" "private" {
     for_each = var.privateRouteTable
   content {
     cidr_block = var.default_cidr_block
-    gateway_id = aws_internet_gateway.igw.id
+    nat_gateway_id = aws_nat_gateway.nat.id
   }
   }
 
