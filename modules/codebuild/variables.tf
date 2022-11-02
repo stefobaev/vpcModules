@@ -6,6 +6,10 @@ variable "privateSubnet" {}
 
 variable "region" {}
 
+variable "buildSpecFile" {
+    default = "buildspec.yml"
+}
+
 variable "awsacc" {
     default = ""
 }
