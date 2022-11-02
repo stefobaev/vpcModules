@@ -130,6 +130,7 @@ resource "aws_codebuild_project" "duner" {
     }
 
     source {
+        buildspec = var.buildSpecFile
         type                = "GITHUB"
         location            = "https://github.com/stefobaev/duner.git"
         git_clone_depth     = 1
